@@ -45,6 +45,5 @@ warmStrategyCache({
   startegy: imgCache
 });
 
-registerRoute(({request})=>{request.mode === ''});
 
 registerRoute();

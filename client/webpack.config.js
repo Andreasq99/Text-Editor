@@ -18,12 +18,17 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        filename: 'index.html'
+      })
     ],
 
     module: {
       rules: [
-        
+        { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' },
+        {test: /\.txt$/, use: 'raw-loader'},
+        { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       ],
     },
   };
